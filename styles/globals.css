@@ -2,8 +2,18 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-family: var(--font-family2);
+  background-color: var(--bg-color);
+  background-image: url("../assets/images/bg.svg");
+  overflow-x: hidden;
 }
 
 a {
@@ -13,4 +23,216 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --font-family1: "Punta Regular", sans-serif;
+  --font-family2: "Satoshi", sans-serif;
+  --bg-color: #fdf9ee;
+
+  --primary-color1: #500740;
+  --primary-color2: #fff0d7;
+  --accent-color1: #15c073;
+  --accent-color2: #fff;
+}
+
+@font-face {
+  font-family: "Punta Regular";
+  src: url("../assets/fonts/punta/PuntaRegular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("../assets/fonts/satoshi/Satoshi-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/satoshi/Satoshi-Regular.woff") format("woff"),
+    url("../assets/fonts/satoshi/Satoshi-Regular.woff2") format("woff2"),
+    url("../assets/fonts/satoshi/Satoshi-Regular.eot")
+      format("embedded-opentype");
+}
+
+.layout {
+  padding: 1em 2em;
+}
+
+.nav-title {
+  font-weight: 600;
+  color: var(--primary-color1);
+  margin-right: 2em;
+  border-bottom: 2px solid var(--primary-color2);
+}
+
+.nav-subtitle {
+  color: var(--primary-color1);
+}
+
+@media (min-width: 40em) {
+  .nav-title {
+    font-size: 1.5rem;
+  }
+
+  .nav-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+.primaryButton {
+  border: none;
+  padding: 1em 2em;
+  background: var(--primary-color1);
+  color: var(--primary-color2);
+  font-family: var(--font-family2);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 40em) {
+  .primaryButton {
+    align-self: flex-start;
+  }
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4;
+  margin-top: 4rem;
+}
+
+.form-title {
+  font-family: var(--font-family1);
+  color: var(--primary-color1);
+  font-weight: 500;
+}
+
+@media (min-width: 40em) {
+  .form-title {
+    font-size: 3rem;
+  }
+
+  .form-title-extra {
+    font-size: 0.6rem;
+    color: var(--accent-color2);
+    background-color: var(--accent-color1);
+    padding: 5px 5px;
+    position: relative;
+    bottom: 20px;
+  }
+}
+
+@media (min-width: 40em) {
+  .form-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2;
+}
+
+.question-label {
+  font-weight: 600;
+}
+
+.question-img {
+  object-fit: cover;
+  height: 12rem;
+  width: 20rem;
+  padding-top: 2rem;
+}
+
+fieldset {
+  border: 1px solid var(--primary-color1);
+}
+
+.form-fieldset {
+  margin-top: 4em;
+  margin-bottom: 1em;
+  border: none;
+}
+
+@media (min-width: 40em) {
+  .form-fieldset {
+    margin-top: 1em;
+    padding-left: 0;
+  }
+}
+
+.form-fieldset > div {
+  margin-top: 1rem;
+}
+
+.input-container {
+  display: flex;
+}
+
+input[type="radio"] {
+  height: 1rem;
+  width: 1rem;
+  border: 1px solid gray;
+}
+
+input[type="radio"]:focus {
+  border: 2px solid var(--accent-color2);
+  font-weight: 500;
+}
+
+.form-fieldset-radio {
+  height: 1rem;
+  width: 1rem;
+  border: 1px solid gray;
+}
+
+.form-fieldset-radio:focus {
+  border: 2px solid var(--accent-color2);
+  font-weight: 500;
+}
+
+.form-fieldset-answer {
+  display: block;
+  font-weight: medium;
+  margin-left: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 40em) {
+  .form-fieldset-answer {
+    margin-bottom: 1em;
+  }
+}
+
+.congrats {
+  color: var(--accent-color1);
+  font-weight: 600;
+}
+
+.error {
+  color: red;
+  font-weight: 900;
+}
+
+.footer {
+  position: absolute;
+  bottom: -69px;
+  margin-top: 4em;
+}
+
+@media (min-width: 40em) {
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.footer-attribution {
+  margin-right: 2em;
+  color: var(--primary-color1);
+}
+
+.footer-author {
+  color: var(--primary-color1);
 }
