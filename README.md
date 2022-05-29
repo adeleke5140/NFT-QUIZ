@@ -21,8 +21,9 @@ Test out the FrontEnd [Here](https://nft-quiz-eta.vercel.app/)
 
 ## Test Locally
 
-First, run the development server:
-
+1. First, clone the Repo,
+2. Install the dependencies with `yarn install`
+3. Start the dev server
 ```bash
 npm run dev
 # or
