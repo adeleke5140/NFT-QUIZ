@@ -49,6 +49,7 @@ export default function Lounge() {
 
   useEffect(() => {
     if (signer) {
+      //Thirdweb changed their SDK and nothing is working as it should.
       sdk.updateSignerOrProvider(signer)
       sdk.getSigner()
       sdk.eventNames()
@@ -56,7 +57,6 @@ export default function Lounge() {
       sdk.getSignerOrProvider()
       sdk.getSigner()
       sdk.getPublisher()
-      sdk.eventNames(address)
       // signer.sendTransaction(packModule)
       // signer.signTransaction(packModule)
       // signer.signMessage("Confirm the transaction")
