@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -54,6 +58,12 @@ a {
   padding: 1em 2em;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .nav-title {
   font-weight: 600;
   color: var(--primary-color1);
@@ -83,6 +93,20 @@ a {
   font-family: var(--font-family2);
   cursor: pointer;
   font-size: 0.9rem;
+}
+
+.disconnect {
+  padding: 0.5em 0.7em;
+}
+
+.connected-wallet {
+  font-size: 0.7rem;
+  color: var(--accent-color2);
+  background-color: var(--accent-color1);
+  -webkit-line-clamp: 10;
+  line-clamp: 10;
+  padding: 0.5em 0.5em;
+  overflow: hidden;
 }
 
 @media (min-width: 40em) {
@@ -220,11 +244,12 @@ input[type="radio"]:focus {
 }
 
 @media (min-width: 40em) {
-  .footer {
+  .footer.footer {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
+    bottom: 0px;
   }
 }
 
