@@ -15,9 +15,9 @@ This might not be enough to win the hackathon but I just wanted to show
 my participation and the tools I implemented.
 
 P.S: If you think you can help out with the ThirdWeb Issue, please ping me.
-I am on twitter [adeleke514](http://twitter.com/adeleke5140/)
+I am on twitter [adeleke5140](http://twitter.com/adeleke5140/)
 
-Test out the FrontEnd [Here]()
+Test out the FrontEnd [Here](https://nft-quiz-eta.vercel.app/)
 
 ## Test Locally
 
