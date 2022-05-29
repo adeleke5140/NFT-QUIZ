@@ -46,20 +46,40 @@ export default function QuizQuestion({
 
   if (!address) {
     return (
-      <p
+      <div
         style={{
-          color: "var(--primary-color1)",
-          height: "60vh",
-          width: "100vw",
           display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          fontFamily: "var(--font-family1)",
-          fontSize: "2rem"
+          height: "60vh",
+          width: "100vw"
         }}
       >
-        Please fren, connect your wallet🙈 to take the quiz🥳{" "}
-      </p>
+        <p
+          style={{
+            color: "var(--primary-color1)",
+
+            fontFamily: "var(--font-family1)",
+            fontSize: "2rem"
+          }}
+        >
+          Please fren, connect your wallet🙈 to take the quiz🥳{" "}
+        </p>
+        <p>
+          Also, dont forget to connect to the Polygon Mumbai testnet, dont know
+          how, check{" "}
+          <a
+            style={{
+              fontWeight: "900",
+              color: "var(--primary-color1)"
+            }}
+            href="https://docs.polygon.technology/docs/develop/metamask/config-polygon-on-metamask/#add-the-polygon-network-manually"
+          >
+            Here👋
+          </a>
+        </p>
+      </div>
     )
   }
 
