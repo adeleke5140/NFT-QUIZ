@@ -1,6 +1,7 @@
 import React from "react"
 import Footer from "./Footer"
 import Navbar from "./Navbar"
+import usePackEvents from "../hooks/usePackEvents"
 
 type Props = {
   title: string
@@ -9,6 +10,7 @@ export default function Layout({
   children,
   title
 }: React.PropsWithChildren<Props>) {
+  usePackEvents()
   return (
     <div className="layout">
       <Navbar />

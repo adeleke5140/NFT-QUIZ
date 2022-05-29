@@ -9,6 +9,10 @@ import {
 import PrimaryButton from "./PrimaryButton"
 import invariant from "tiny-invariant"
 
+// import { useWeb3 } from "@3rdweb/hooks"
+import { useAddress, useSigner } from "@thirdweb-dev/react"
+import {} from "@thirdweb-dev/sdk"
+
 type Props = {
   questionIndex: number
   questionText: string
@@ -26,6 +30,10 @@ export default function QuizQuestion({
   answers,
   nextQuestionFunction
 }: Props) {
+  const address = useAddress()
+  const provider = useSigner()
+  console.log(provider)
+
   const [answerIndex, setAnswerIndex] = useState<number | undefined>(undefined)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | undefined>(undefined)
@@ -36,16 +44,43 @@ export default function QuizQuestion({
     undefined
   )
 
+  if (!address) {
+    return (
+      <p
+        style={{
+          color: "var(--primary-color1)",
+          height: "60vh",
+          width: "100vw",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontFamily: "var(--font-family1)",
+          fontSize: "2rem"
+        }}
+      >
+        Please fren, connect your wallet🙈 to take the quiz🥳{" "}
+      </p>
+    )
+  }
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setSubmitting(true)
-
+    invariant(
+      provider !== undefined,
+      "Provider must be defined to submit an answer"
+    )
     try {
       invariant(answerIndex !== undefined, "Answer index is required to submit")
+      const message =
+        "Please sign this message to confirm your identity and submit the answer.This won't cost any gas!"
+      const signedMessage = await provider.signMessage(message)
 
       const payload: CheckAnswerPayload = {
         questionIndex,
-        answerIndex
+        answerIndex,
+        message,
+        signedMessage
       }
 
       const checkResponse = await axios.post("/api/check-answer", payload)
