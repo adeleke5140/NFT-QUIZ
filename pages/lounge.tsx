@@ -51,6 +51,15 @@ export default function Lounge() {
     if (signer) {
       sdk.updateSignerOrProvider(signer)
       sdk.getSigner()
+      sdk.addListener
+      sdk.deployer
+      sdk.emit
+      sdk.eventNames
+      sdk.getProvider()
+      sdk.getSignerOrProvider()
+      sdk.getSigner()
+      sdk.getPublisher()
+
       // signer.sendTransaction(packModule)
       // signer.signTransaction(packModule)
       // signer.signMessage("Confirm the transaction")

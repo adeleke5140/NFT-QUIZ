@@ -241,15 +241,15 @@ input[type="radio"]:focus {
   position: absolute;
   bottom: -69px;
   margin-top: 4em;
+  left: 0;
 }
 
 @media (min-width: 40em) {
   .footer.footer {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     width: 100%;
-    bottom: 0px;
   }
 }
 
